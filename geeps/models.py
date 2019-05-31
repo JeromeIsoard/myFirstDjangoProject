@@ -1,14 +1,14 @@
 from django.db import models
 
 
-def getBuildingChoices():
-    buildings = Building.objects.all()
-    # make an array
-    buildings_array = []
-    # foreach buildings add building name in the array
-    for b in buildings:
-        buildings_array.append(b.get_name_display())
-    return buildings_array
+# def getBuildingChoices():
+#     buildings = Building.objects.all()
+#     # make an array
+#     buildings_array = []
+#     # foreach buildings add building name in the array
+#     for b in buildings:
+#         buildings_array.append(b.get_name_display())
+#     return buildings_array
 
 
 class PrintingRequest(models.Model):
@@ -17,7 +17,7 @@ class PrintingRequest(models.Model):
     mail = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     # date = models.DateTimeField(default=timezone.now)
-    building = models.CharField(choices=getBuildingChoices())
+    # building = models.CharField(choices=getBuildingChoices())
 
 
 class Building(models.Model):
