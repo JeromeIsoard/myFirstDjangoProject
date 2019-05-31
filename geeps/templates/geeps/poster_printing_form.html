@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>GEEPS</title>
+</head>
+<body>
+<img src="{% static 'geeps/logoGeeps.png' %}" alt="Logo Geeps">
+<h1>GeePs Poster Printing Center</h1>
+
+<div>
+    <form method="post" class="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Valider</button>
+    </form>
+</div>
+</body>
+</html>
