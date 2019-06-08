@@ -1,20 +1,86 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>GEEPS</title>
-</head>
-<body>
-<img src="{% static 'geeps/logoGeeps.png' %}" alt="Logo Geeps">
-<h1>GeePs Poster Printing Center</h1>
+    <head>
+        <meta charset="UTF-8">
+        <title>GeePs Poster Printing Center</title>
+        <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    </head>
 
-<div>
-    <form method="post" class="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Valider</button>
-    </form>
-</div>
-</body>
+    <body>
+        <div class="header">
+            <img src="{% static 'geeps/logoGeeps.png' %}" alt="Logo Geeps">
+            <h1 class="header-title">GeePs Poster Printing Center</h1>
+            <select id="select-lang">
+                    <option value="english">English</option>
+                    <option value="french">French</option>
+                </select>
+            <input type="button" id="btnAdmin" value="Admin">
+        </div>
+
+        <div class="content">
+            <form method="post" class="">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <input type="text" id="name" name="name" placeholder="(*) Name" required>
+                <input type="text" id="firstname" name="firstname" placeholder="(*) Firstname" required>
+                <br />
+
+                <input type="text" id="email" name="email" placeholder="(*) Email" required>
+                <input type="text" id="phone" name="phone" placeholder="(*) 01.69.85.XX.XX" required>
+                <br />
+
+                <select id="select-building">
+                    <option value="building" disabled selected>(*) Select your building</option>
+                    <option value="building1">Building 1</option>
+                    <option value="building2">Building 2</option>
+                </select>
+                <input type="text" id="office" name="office" placeholder="(*) Office" required>
+                <br />
+
+                <select id="select-upload-file">
+                    <option value="upload-file" disabled selected>(*) Upload your file (PDF | PPT | PPTX)</option>
+                </select>
+                <select id="select-printing-format">
+                    <option value="printingFormat" disabled selected>(*) Printing format</option>
+                    <option value="formatA0">A0 (118,9 x 84,1 cm)</option>
+                    <option value="formatA0plus">A0+ oversize (129 x 91 cm)</option>
+                    <option value="formatOther">Other format</option>
+                </select>
+                <br />
+
+                <select id="select-minimum-delivery-date">
+                    <option value="minimumDeliveryDate" disabled selected>(*) Minimum delivery date</option>
+                </select>
+                <input type="text" id="formatHeight" name="formatHeight" > cm x <input type="text" id="formatWidth" name="formatWidth" > cm <!-- required only if Other format is selected-->
+                <br />
+
+                <input type="text" id="comments" name="comments" placeholder="Comments">
+                <br />
+
+                <button type="submit" id="btnSend">Send</button>
+                <b><label for="requiredFields" id="requiredFields">(*) Required fields</label></b>
+
+            </form>
+        </div>
+
+        <div class="footer">
+            <hr />
+            <div>
+                <a href="#">Direction :</a> Claude Marchand <br />
+                <b>GeePs</b> <br />
+                CNRS UMR8507 - CentraleSupélec <br />
+                Université Paris-Sud - Sorbonne Universités <br />
+                91190 Gif sur Yvette
+            </div>
+
+            <div>
+                @ Copyright 2019 - GeePs <br />
+                <a href="mailto:webmaster@geeps.centralesupelec.fr">webmaster@geeps.centralesupelec.fr</a><br />
+                This site is powered by Django
+            </div>
+
+        </div>
+    </body>
 </html>

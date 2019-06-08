@@ -1,0 +1,22 @@
+.header-title {
+    background-color: #FFFFFF;
+    color: #3366FF;
+}
+
+body, .header, .content, .footer {
+    background-color: #FFFFE2;
+    text-align: center;
+}
+
+#btnSend {
+    background-color: #3366FF;
+    color: #FFFFFF;
+}
+
+.footer {
+    background-color: #C1D1EB;
+}
+
+/*input::placeholder {
+  font-weight: bold;
+}*/
