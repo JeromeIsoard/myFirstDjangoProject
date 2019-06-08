@@ -1,9 +1,20 @@
 .header-title {
     background-color: #FFFFFF;
     color: #3366FF;
+    font-size: 50px;
 }
 
-body, .header, .content, .footer {
+#name, #firstname, #email, #phone, #select-building, #office, #select-upload-file, #select-printing-format, #select-minimum-delivery-date,
+#formatHeight, #formatWidth, #comments {
+    margin-top: 10px;
+}
+
+.header-title, #logo, .lang {
+    display: inline;
+    margin-right: 10%;
+}
+
+body, .header, .content{
     background-color: #FFFFE2;
     text-align: center;
 }
@@ -11,12 +22,39 @@ body, .header, .content, .footer {
 #btnSend {
     background-color: #3366FF;
     color: #FFFFFF;
+    border-radius: 4px;
+}
+
+#formatHeight, #formatWidth {
+    width: 80px;
 }
 
 .footer {
     background-color: #C1D1EB;
 }
 
-/*input::placeholder {
+.column1 {
+    margin-right: 10%;
+}
+
+.column2 {
+
+}
+
+#footer-left, #footer-right {
+    display: inline-block;
+    margin-right: 5%;
+}
+
+#footer-left {
+    text-align: left;
+}
+
+#footer-right {
+    text-align: right;
+}
+
+input::placeholder, .select-default-value {
   font-weight: bold;
-}*/
+}
+
