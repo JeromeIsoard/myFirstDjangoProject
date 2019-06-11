@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 # def getBuildingChoices():
 #     buildings = Building.objects.all()
@@ -11,17 +11,37 @@ from django.db import models
 #     return buildings_array
 
 
+# class Building(models.Model):
+#     nameBuilding = models.CharField(max_length=50)
+#
+#     def getBuilding(self):
+#         return self.nameBuilding
+#
+#
+# class PrintingFormat(models.Model):
+#     nameFormat = models.CharField(max_length=20)
+#
+#     def getFormat(self):
+#         return self.nameFormat
+
+
 class PrintingRequest(models.Model):
     lastName = models.CharField(max_length=50)
     firstName = models.CharField(max_length=50)
     mail = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    # date = models.DateTimeField(default=timezone.now)
-    # building = models.CharField(choices=getBuildingChoices())
+    office = models.CharField(max_length=10)
+    date = models.DateTimeField(default=timezone.now)
+    # building = models.ForeignKey(Building)
+    # printingFormat = models.ForeignKey(PrintingFormat)
+    widthFormat = models.CharField(max_length=5)
+    heightFormat = models.CharField(max_length=5)
+    comments = models.CharField(max_length=500)
 
 
-class Building(models.Model):
-    name = models.CharField(max_length=50)
+
+
+
 
 # class Post(models.Model):
 #     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)

@@ -10,7 +10,7 @@
 }
 
 .header-title, #logo, .lang {
-    display: inline;
+    display: inline-block;
     margin-right: 10%;
 }
 
