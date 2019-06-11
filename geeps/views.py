@@ -10,9 +10,7 @@ def poster_printing_request(request):
 
 
 def poster_printing():
-
-    return redirect('/poster_printing_request/')
-
+    return redirect('poster_printing_request')
 
 # todo: create models
 # todo: register models in admin.py
