@@ -13,8 +13,8 @@
 .form-component { /* format-size */
     margin-top: 15px;
     font-weight: bold;
-    border-radius: 1px;
-    padding-left: 0.5%
+    border-radius: 3px;
+    padding-left: 0.5%;
 }
 
 .header-title, #logo, .lang {
